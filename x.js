@@ -7,7 +7,6 @@ attachFastClick(document.body)
 
 },{"./map":2,"./menu":3,"fastclick":4}],2:[function(require,module,exports){
 module.exports = function map() {
-    console.log('called map')
     var map = L.mapbox.map('map', 'examples.map-y7l23tes', {zoomControl:false}).setView([40.762485, -73.997513], 10000)
     return map
 }
