@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta name=viewport content=width=device-widthuser-scalable=no,initial-scale=1.0,maximum-scale=1.0>
+<meta name=viewport content=width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0>
 <link href=http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css rel=stylesheet>
 <link href=vendor/topcoat-0.7.5/css/topcoat-mobile-dark.css rel=stylesheet>
 <link href=index.css rel=stylesheet>
@@ -35,7 +35,7 @@
                     <a id=signin-link href="#" class="side-nav__button">Sign in</a>
                 </li>
                 <li class="topcoat-list__item side-nav__list__item">
-                    <a href="#" class="side-nav__button">Request invite</a>
+                    <a id=reg-link  href="#" class="side-nav__button">Request invite</a>
                 </li>
             </ul>
         </div>
@@ -56,7 +56,28 @@
             </p>
             <button class=topcoat-button--large>Sign in</button>
         </div>
-        <div id=reg><h1>Register</h1></div>
+        <div id=reg>
+            <h1>Register an account</h1>
+            <p>Only artists can submit or verify artwork. Regular accounts are upgraded to artist accounts 
+            if three established artists vouch for you.</p>
+            <p>
+            <label>Your email address</label>
+            <input type="text" class="topcoat-text-input--large" value="" placeholder="Please enter your email">
+            </p>
+            <p>
+            <label>Choose a username</label>
+            <input type="text" class="topcoat-text-input--large" value="" placeholder="Enter your username">
+            </p>
+            <p>
+            <label>Choose a password</label>
+            <input type="password" class="topcoat-text-input--large" value="" placeholder="Password text">
+            </p>
+            <p>
+            <label>Confirm your password</label>
+            <input type="password" class="topcoat-text-input--large" value="" placeholder="Confirm your password">
+            </p>
+            <button class=topcoat-button--large>Register</button>
+        </div>
     </div>
 
 

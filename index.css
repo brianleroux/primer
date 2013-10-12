@@ -17,14 +17,17 @@
     display:none;
 }
 
-#signin label {
+#signin label,
+#reg label {
     display:block;
 }
-#signin input {
+#signin input,
+#reg input {
     width:100%;
 }
 /* FIXME wtf */
-#signin > * {
+#signin > *,
+#reg > * {
     margin-left:3rem;
     margin-right:3rem;
 }
