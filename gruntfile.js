@@ -23,12 +23,20 @@ module.exports = function(grunt) {
                 tasks:['serve', 'watch'],
                 options:{logConcurrentOutput: true}
             }
+        },
+
+        'gh-pages': {
+            options: {
+                base: 'www'
+            },
+            src: ['**']
         }
     })
     
     grunt.loadNpmTasks('grunt-browserify')
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-concurrent')
+    grunt.loadNpmTasks('grunt-gh-pages')
 
     // custom business 
     //

@@ -7,7 +7,8 @@
     "fastclick": "~0.6.11",
     "grunt": "~0.4.1",
     "shelljs": "~0.2.6",
-    "harp": "~0.9.3"
+    "harp": "~0.9.3",
+    "grunt-gh-pages": "~0.8.0"
   },
   "devDependencies": {},
   "scripts": {
