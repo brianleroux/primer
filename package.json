@@ -1,0 +1,27 @@
+{
+  "name": "primer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "fastclick": "~0.6.11",
+    "grunt": "~0.4.1",
+    "shelljs": "~0.2.6",
+    "harp": "~0.9.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianleroux/primer.git"
+  },
+  "author": "Brian LeRoux",
+  "license": "Apache2",
+  "readmeFilename": "readme.md",
+  "gitHead": "5ec34e08737d446b16de92c5e10e292a4be38362",
+  "bugs": {
+    "url": "https://github.com/brianleroux/primer/issues"
+  }
+}

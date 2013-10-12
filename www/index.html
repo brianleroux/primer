@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta name=viewport content=width=device-width,user-scalable=no>
+<link href=http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css rel=stylesheet>
+<link href=vendor/topcoat-0.7.5/css/topcoat-mobile-dark.css rel=stylesheet>
+<link href=index.css rel=stylesheet>
+</head>
+<body>
+    
+    
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item left quarter">
+            <a id="slide-menu-button" class="topcoat-icon-button--quiet slide-menu-button">
+                <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+            </a>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Primer</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet">
+                <span class="topcoat-icon topcoat-icon--edit"></span>
+            </a>
+        </div>
+    </div>
+
+
+    <nav class="side-nav">
+        <div class="topcoat-list__container side-nav__list__container">
+            <ul class="topcoat-list side-nav__list">
+                <li class="topcoat-list__item side-nav__list__item">
+                    <a href="#" class="side-nav__button">Map</a>
+                </li>
+                <li class="topcoat-list__item side-nav__list__item">
+                    <a href="#" class="side-nav__button">Sign in</a>
+                </li>
+                <li class="topcoat-list__item side-nav__list__item">
+                    <a href="#" class="side-nav__button">Request invite</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class=main-content><div id=map class=dark></div></div>
+
+
+<script src=http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js></script>
+<script src=x.js></script>
+</body>
+</html>
