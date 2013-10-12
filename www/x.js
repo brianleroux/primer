@@ -14,14 +14,31 @@ module.exports = function map() {
 },{}],3:[function(require,module,exports){
 module.exports = function menu() {
     
-    var el = document.getElementById('slide-menu-button')
+    var hamburger= document.getElementById('slide-menu-button')
+    ,   signin = document.getElementById('signin-link')
+    ,   map    = document.getElementById('map-link')
+    ,   reg    = document.getElementById('reg-link')
     
-    el.onclick = function(e) {
+    var toggleGlobalNav = function(e) {
         var cl = document.body.classList
         cl.contains('left-nav') ? cl.remove('left-nav') : cl.add('left-nav')
     }
 
-    return el
+    hamburger.onclick = toggleGlobalNav
+
+    signin.onclick = function(e) {
+        document.getElementById('map').style.display = 'none'
+        document.getElementById('signin').style.display = 'inline'
+        toggleGlobalNav()
+    }
+
+    map.onclick = function(e) {
+        document.getElementById('map').style.display = 'block'
+        document.getElementById('signin').style.display = 'none'
+        toggleGlobalNav()
+    }
+
+    return {hamburger:hamburger, signin:signin, map:map, reg:reg}
 }
 
 },{}],4:[function(require,module,exports){
