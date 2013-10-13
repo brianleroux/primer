@@ -18,9 +18,12 @@
             <h1 id=header-text class="topcoat-navigation-bar__title">Primer</h1>
         </div>
         <div class="topcoat-navigation-bar__item right quarter">
-            <a class="topcoat-icon-button--quiet">
-                <span class="topcoat-icon topcoat-icon--camera"></span>
-            </a>
+            <form id=camera-form>
+                <input id=camera-input style=position:absolute;top:-100px; type=file accept=image/*;capture=camera>
+                <a id=camera-button class=topcoat-icon-button--quiet onclick=document.getElementById('camera-input').click()>
+                    <span class="topcoat-icon topcoat-icon--camera"></span>
+                </a>
+            </form>
         </div>
     </div>
 

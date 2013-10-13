@@ -2,7 +2,8 @@
     height:5rem;
 }
 
-#slide-menu-button {
+#slide-menu-button,
+#camera-button {
     padding:1rem;
     margin:0.6rem 0 0 0;
 }
@@ -28,8 +29,9 @@
     padding: 0 1rem 0 1rem;
 }
 
-.topcoat-icon--camera{
-  background: url("../img/camera_light.svg") no-repeat;
+
+.topcoat-icon--camera {
+  background: url("svg/camera_light.svg") no-repeat;
   background-size: cover;
 }
 

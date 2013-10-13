@@ -25,6 +25,9 @@ menu.on({
     signin: function() {
         header.innerText = 'Sign in'
         stage.show('signin')
+    }, 
+    camera: function() {
+                
     }
 })
 
