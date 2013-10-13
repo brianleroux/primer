@@ -13,7 +13,9 @@
     height:100%;
 }
 
-#signin, #reg {
+#signin, 
+#reg,
+#reg2 {
     display:none;
 }
 
