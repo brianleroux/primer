@@ -14,11 +14,12 @@ module.exports = function map() {
 },{}],3:[function(require,module,exports){
 module.exports = function menu() {
     
-    var hamburger= document.getElementById('slide-menu-button')
-    ,   signin = document.getElementById('signin-link')
-    ,   map    = document.getElementById('map-link')
-    ,   reg    = document.getElementById('reg-link')
-    
+    var hamburger = document.getElementById('slide-menu-button')
+    ,   signin    = document.getElementById('signin-link')
+    ,   map       = document.getElementById('map-link')
+    ,   reg       = document.getElementById('reg-link')
+    ,   header    = document.getElementById('header-text')
+
     var toggleGlobalNav = function(e) {
         var cl = document.body.classList
         cl.contains('left-nav') ? cl.remove('left-nav') : cl.add('left-nav')
@@ -30,6 +31,7 @@ module.exports = function menu() {
         document.getElementById('map').style.display = 'none'
         document.getElementById('signin').style.display = 'inline'
         document.getElementById('reg').style.display = 'none'
+        header.innerText = 'Sign in'
         toggleGlobalNav()
     }
 
@@ -37,6 +39,7 @@ module.exports = function menu() {
         document.getElementById('map').style.display = 'block'
         document.getElementById('signin').style.display = 'none'
         document.getElementById('reg').style.display = 'none'
+        header.innerText = 'Primer'
         toggleGlobalNav()
     }
     
@@ -44,6 +47,7 @@ module.exports = function menu() {
         document.getElementById('map').style.display = 'none'
         document.getElementById('signin').style.display = 'none'
         document.getElementById('reg').style.display = 'inline'
+        header.innerText = 'Register'
         toggleGlobalNav()
     }
 

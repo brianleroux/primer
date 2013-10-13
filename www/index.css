@@ -30,6 +30,7 @@
 #reg > * {
     margin-left:3rem;
     margin-right:3rem;
+    overflow:auto;
 }
 
 html, body {
@@ -45,6 +46,10 @@ body {
     height:100%;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+button {
+    float:right;
 }
 
 body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
@@ -87,7 +92,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 .side-nav__button {
     display:block;
     width:100%;
-    padding: 2rem;
+    padding: 1.9rem;
     box-sizing: border-box;
     color: #c6c8c8;
     text-decoration:none;
