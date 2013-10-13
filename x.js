@@ -9,6 +9,7 @@ var fastClick = require('fastclick')
 // init ceremony
 fastClick(document.body)
 map.setView(newyork, 1000)
+L.marker(newyork).addTo(map).bindPopup("Animal").openPopup()
 
 
 // navigation events
