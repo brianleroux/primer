@@ -1,24 +1,48 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var attachFastClick = require('fastclick')
-,   menu            = require('./menu')()
-,   map             = require('./map')()
+var fastClick = require('fastclick')
+,   menu      = require('./menu')()
+,   map       = require('./map')()
+,   stage     = require('./stage')()
+,   header    = document.getElementById('header-text')
+,   newyork   = [40.762485, -73.997513] 
 
-attachFastClick(document.body)
+// init ceremony
+fastClick(document.body)
+map.setView(newyork, 1000)
 
-},{"./map":2,"./menu":3,"fastclick":4}],2:[function(require,module,exports){
+
+// navigation events
+menu.on({
+    map: function() {
+        header.innerText = 'Primer'
+        stage.show('map')
+        map.invalidateSize()
+    },
+    reg: function() {
+        header.innerText = 'Register'
+        stage.show('reg')
+    },
+    signin: function() {
+        header.innerText = 'Sign in'
+        stage.show('signin')
+    }
+})
+
+},{"./map":2,"./menu":3,"./stage":4,"fastclick":5}],2:[function(require,module,exports){
 module.exports = function map() {
-    var map = L.mapbox.map('map', 'examples.map-y7l23tes', {zoomControl:false}).setView([40.762485, -73.997513], 10000)
-    return map
+    return L.mapbox.map('map', 'examples.map-y7l23tes', {zoomControl:false})
 }
 
 },{}],3:[function(require,module,exports){
 module.exports = function menu() {
     
+    var self = this
+    this.eventHash = {}
+
     var hamburger = document.getElementById('slide-menu-button')
     ,   signin    = document.getElementById('signin-link')
     ,   map       = document.getElementById('map-link')
     ,   reg       = document.getElementById('reg-link')
-    ,   header    = document.getElementById('header-text')
 
     var toggleGlobalNav = function(e) {
         var cl = document.body.classList
@@ -28,33 +52,44 @@ module.exports = function menu() {
     hamburger.onclick = toggleGlobalNav
 
     signin.onclick = function(e) {
-        document.getElementById('map').style.display = 'none'
-        document.getElementById('signin').style.display = 'inline'
-        document.getElementById('reg').style.display = 'none'
-        header.innerText = 'Sign in'
+        self.eventHash.signin.call(this, e)
         toggleGlobalNav()
     }
 
     map.onclick = function(e) {
-        document.getElementById('map').style.display = 'block'
-        document.getElementById('signin').style.display = 'none'
-        document.getElementById('reg').style.display = 'none'
-        header.innerText = 'Primer'
+        self.eventHash.map.call(this, e)
         toggleGlobalNav()
     }
     
     reg.onclick = function(e) {
-        document.getElementById('map').style.display = 'none'
-        document.getElementById('signin').style.display = 'none'
-        document.getElementById('reg').style.display = 'inline'
-        header.innerText = 'Register'
+        self.eventHash.reg.call(this, e)
         toggleGlobalNav()
     }
 
-    return {hamburger:hamburger, signin:signin, map:map, reg:reg}
+    return {
+        on: function(eventHash) {
+            self.eventHash = eventHash
+        }
+    }
 }
 
 },{}],4:[function(require,module,exports){
+
+module.exports = function stage() {
+
+    var elements = "map reg signin".split(' ')
+
+    return {
+        show: function(viewName) {
+            elements.forEach(function(e, i) {
+                document.getElementById(e).style.display = 'none'
+            })
+            document.getElementById(viewName).style.display = 'block'            
+        } 
+    }
+}
+
+},{}],5:[function(require,module,exports){
 /**
  * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
  *

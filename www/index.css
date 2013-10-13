@@ -13,25 +13,27 @@
 }
 
 #signin, #reg {
-    padding:3rem;
     display:none;
 }
 
 #signin label,
-#reg label {
-    display:block;
-}
+#reg label,
 #signin input,
 #reg input {
     width:100%;
+    display:block;
 }
-/* FIXME wtf */
-#signin > *,
-#reg > * {
-    margin-left:3rem;
-    margin-right:3rem;
-    overflow:auto;
+#signin p,
+#reg p {
+    padding: 0 1rem 0 1rem;
 }
+
+.topcoat-icon--camera{
+  background: url("../img/camera_light.svg") no-repeat;
+  background-size: cover;
+}
+
+
 
 html, body {
     margin:0;
